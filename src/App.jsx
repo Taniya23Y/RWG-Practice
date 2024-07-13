@@ -3,15 +3,19 @@ import Products from "./components/Products";
 import Stripes from "./components/Stripes";
 import Work from "./components/Work";
 import Marquees from "./components/Marquees";
+import Cards from "./components/Cards";
+import Footer from "./components/Footer";
 
 const App = () => {
   return (
-    <div className="max-w-screen-2xl bg-zinc-900 text-white  ">
+    <div className="w-full bg-zinc-900 text-white overflow-hidden ">
       <Navbar />
       <Work />
       <Stripes />
       <Products />
       <Marquees />
+      <Cards />
+      <Footer />
     </div>
   );
 };
