@@ -12,12 +12,12 @@ const Navbar = () => {
           {/* making links with map function  */}
           {["Home", "Work", "About", "", "News", "Careers"].map((elem, index) =>
             elem.length === 0 ? (
-              <span key={elem} className="w-[2px] h-5 bg-zinc-400"></span>
+              <span key={index} className="w-[2px] h-5 bg-zinc-400"></span>
             ) : (
               <a
                 href="#"
                 className="font-normal text-[0.795rem] flex items-center gap-1"
-                key={elem}
+                key={index}
               >
                 {index === 1 ? (
                   <span

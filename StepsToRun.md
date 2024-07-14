@@ -110,3 +110,31 @@ images.map(item=>item.src);
 images.map(item=>console.log(item.src));
 
 ```
+
+#### It's time for animation
+
+- ![locomotive js (github )](https://github.com/locomotivemtl/locomotive-scroll/tree/v5-beta?tab=readme-ov-file)
+
+```
+npm install locomotive-scroll@beta
+```
+
+- ![quick start guide](https://scroll.locomotive.ca/docs/#/quickstart?id=installation)
+  - Paste below code in App.js
+
+```
+import LocomotiveScroll from 'locomotive-scroll';
+
+const locomotiveScroll = new LocomotiveScroll();
+```
+
+- Animation on work component
+  - go to Framer motion website
+  - ![install framer motion](https://www.framer.com/motion/introduction/#install)
+  - `npm install framer-motion`
+  - `import { motion } from "framer-motion"`
+  - useScroll
+  - ![useScroll](https://www.framer.com/motion/use-scroll/)
+    ```
+    import { useScroll } from "framer-motion"
+    ```
