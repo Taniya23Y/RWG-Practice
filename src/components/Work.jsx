@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { motion, useScroll } from "framer-motion";
+import { useScroll } from "framer-motion";
 
 const Work = () => {
   const [images, setImages] = useState([
@@ -77,9 +77,6 @@ const Work = () => {
         break;
       case 6:
         imagesShow([0, 1, 2, 3, 4, 5]);
-        break;
-      default:
-        imagesShow([]);
         break;
     }
   });

@@ -1,4 +1,6 @@
+import { motion } from "framer-motion";
 import Product from "./Product";
+import { useState } from "react";
 
 const Products = () => {
   const products = [
@@ -125,11 +127,328 @@ const Products = () => {
     },
   ];
 
+  // jabh bhi parents components (Products) me kuch change karna ho, child component mein kuch hone ki vajah se.
+  // Toh function ya methods ko parent component par banao then use props ke through child par chala do
+
+  const [position, setPosition] = useState(0);
+  const mover = (val) => {
+    setPosition(val * 23);
+  };
+
   return (
-    <div>
+    <div className="mt-32 relative">
       {products.map((value, index) => (
-        <Product value={value} key={index} />
+        <Product value={value} key={index} count={index} mover={mover} />
       ))}
+
+      <div className="absolute top-0 w-full h-full  pointer-events-none">
+        <motion.div
+          initial={{ y: position, x: "-50%" }}
+          animate={{ y: position + `rem` }}
+          transition={{ ease: [0.76, 0, 0.24, 1], duration: 0.4 }}
+          className="window absolute w-[30rem] h-[23rem] rounded-3xl  left-[45%] overflow-hidden"
+        >
+          {/* 1  */}
+          <motion.div
+            animate={{ y: -position + `rem` }}
+            transition={{ ease: [0.76, 0, 0.24, 1], duration: 0.4 }}
+            className="window  w-full h-full  rounded-3xl  "
+          >
+            <video
+              className="absolute object-cover h-full rounded-3xl"
+              autoPlay
+              muted
+              loop
+              src={`https://cdn.refokus.com/website/Arqitel/Arqitel%20project%20video%204_3.webm`}
+            ></video>
+          </motion.div>
+
+          {/* 2  */}
+          <motion.div
+            animate={{ y: -position + `rem` }}
+            transition={{ ease: [0.76, 0, 0.24, 1], duration: 0.5 }}
+            className="window  w-full h-full rounded-3xl  "
+          >
+            <video
+              className="absolute object-cover h-full rounded-3xl"
+              autoPlay
+              muted
+              loop
+              src={`https://cdn.refokus.com/website/Cula_promo_new_4_3.mp4`}
+            ></video>
+          </motion.div>
+
+          {/* 3  */}
+          <motion.div
+            animate={{ y: -position + `rem` }}
+            transition={{ ease: [0.76, 0, 0.24, 1], duration: 0.4 }}
+            className="window  w-full h-full rounded-3xl  "
+          >
+            <video
+              className="absolute object-cover h-full rounded-3xl"
+              autoPlay
+              muted
+              loop
+              src={`https://cdn.refokus.com/refokus-promo/webflow-education-promo.mp4`}
+            ></video>
+          </motion.div>
+
+          {/* 4  */}
+          <motion.div
+            animate={{ y: -position + `rem` }}
+            transition={{ ease: [0.76, 0, 0.24, 1], duration: 0.4 }}
+            className="window  w-full h-full  rounded-3xl  "
+          >
+            <video
+              className="absolute object-cover h-full rounded-3xl"
+              autoPlay
+              muted
+              loop
+              src={`https://cdn.refokus.com/website/TTR/TTR%20project%20video%204_3_H.264.webm`}
+            ></video>
+          </motion.div>
+
+          {/* 5  */}
+          <motion.div
+            animate={{ y: -position + `rem` }}
+            transition={{ ease: [0.76, 0, 0.24, 1], duration: 0.4 }}
+            className="window  w-full h-full  rounded-3xl  "
+          >
+            <video
+              className="absolute object-cover h-full rounded-3xl"
+              autoPlay
+              muted
+              loop
+              src={`https://cdn.refokus.com/website/Maniv-Compressed.mp4`}
+            ></video>
+          </motion.div>
+
+          {/* 6  */}
+          <motion.div
+            animate={{ y: -position + `rem` }}
+            transition={{ ease: [0.76, 0, 0.24, 1], duration: 0.4 }}
+            className="window  w-full h-full rounded-3xl  "
+          >
+            <video
+              className="absolute object-cover h-full rounded-3xl"
+              autoPlay
+              muted
+              loop
+              src={`https://cdn.refokus.com/Singularity%20Promo%204_3%202024.webm`}
+            ></video>
+          </motion.div>
+
+          {/* 7  */}
+          <motion.div
+            animate={{ y: -position + `rem` }}
+            transition={{ ease: [0.76, 0, 0.24, 1], duration: 0.5 }}
+            className="window  w-full h-full rounded-3xl  "
+          >
+            <video
+              className="absolute object-cover h-full rounded-3xl"
+              autoPlay
+              muted
+              loop
+              src={`https://cdn.refokus.com/website/2022/videos/weglotlikemagic.webm`}
+            ></video>
+          </motion.div>
+
+          {/* 8  */}
+          <motion.div
+            animate={{ y: -position + `rem` }}
+            transition={{ ease: [0.76, 0, 0.24, 1], duration: 0.4 }}
+            className="window  w-full h-full rounded-3xl  "
+          >
+            <video
+              className="absolute object-cover h-full rounded-3xl"
+              autoPlay
+              muted
+              loop
+              src={`https://cdn.refokus.com/website/2022/videos/Silvr.webm`}
+            ></video>
+          </motion.div>
+
+          {/* 9  */}
+          <motion.div
+            animate={{ y: -position + `rem` }}
+            transition={{ ease: [0.76, 0, 0.24, 1], duration: 0.4 }}
+            className="window  w-full h-full rounded-3xl  "
+          >
+            <video
+              className="absolute object-cover h-full rounded-3xl"
+              autoPlay
+              muted
+              loop
+              src={`https://cdn.refokus.com/website/2022/videos/rainfall.webm`}
+            ></video>
+          </motion.div>
+
+          {/* 10  */}
+          <motion.div
+            animate={{ y: -position + `rem` }}
+            transition={{ ease: [0.76, 0, 0.24, 1], duration: 0.4 }}
+            className="window  w-full h-full rounded-3xl  "
+          >
+            <video
+              className="absolute object-cover h-full rounded-3xl"
+              autoPlay
+              muted
+              loop
+              src={`https://cdn.refokus.com/website/Intenseye_project_video_4_3.webm`}
+            ></video>
+          </motion.div>
+
+          {/* 11  */}
+          <motion.div
+            animate={{ y: -position + `rem` }}
+            transition={{ ease: [0.76, 0, 0.24, 1], duration: 0.4 }}
+            className="window  w-full h-full rounded-3xl  "
+          >
+            <video
+              className="absolute object-cover h-full rounded-3xl"
+              autoPlay
+              muted
+              loop
+              src={`https://cdn.refokus.com/website/2022/videos/remind.webm`}
+            ></video>
+          </motion.div>
+
+          {/* 12  */}
+          <motion.div
+            animate={{ y: -position + `rem` }}
+            transition={{ ease: [0.76, 0, 0.24, 1], duration: 0.4 }}
+            className="window  w-full h-full rounded-3xl  "
+          >
+            <video
+              className="absolute object-cover h-full rounded-3xl"
+              autoPlay
+              muted
+              loop
+              src={`https://cdn.refokus.com/website/2022/videos/summon.webm`}
+            ></video>
+          </motion.div>
+
+          {/* 13  */}
+          <motion.div
+            animate={{ y: -position + `rem` }}
+            transition={{ ease: [0.76, 0, 0.24, 1], duration: 0.4 }}
+            className="window  w-full h-full rounded-3xl  "
+          >
+            <video
+              className="absolute object-cover h-full rounded-3xl"
+              autoPlay
+              muted
+              loop
+              src={`https://cdn.refokus.com/website/jungle-4-3-.webm`}
+            ></video>
+          </motion.div>
+
+          {/* 14  */}
+          <motion.div
+            animate={{ y: -position + `rem` }}
+            transition={{ ease: [0.76, 0, 0.24, 1], duration: 0.4 }}
+            className="window  w-full h-full rounded-3xl  "
+          >
+            <video
+              className="absolute object-cover h-full rounded-3xl"
+              autoPlay
+              muted
+              loop
+              src={`https://cdn.refokus.com/website/Candid/Candid%20Health%204_3_H.264.webm`}
+            ></video>
+          </motion.div>
+
+          {/* 15  */}
+          <motion.div
+            animate={{ y: -position + `rem` }}
+            transition={{ ease: [0.76, 0, 0.24, 1], duration: 0.4 }}
+            className="window  w-full h-full rounded-3xl  "
+          >
+            <video
+              className="absolute object-cover h-full rounded-3xl"
+              autoPlay
+              muted
+              loop
+              src={`https://cdn.refokus.com/website/2022/videos/yahoo.webm`}
+            ></video>
+          </motion.div>
+
+          {/* 16  */}
+          <motion.div
+            animate={{ y: -position + `rem` }}
+            transition={{ ease: [0.76, 0, 0.24, 1], duration: 0.4 }}
+            className="window  w-full h-full rounded-3xl  "
+          >
+            <video
+              className="absolute object-cover h-full rounded-3xl"
+              autoPlay
+              muted
+              loop
+              src={`https://cdn.refokus.com/website/YIR%20website%202022%204_3_VP9.webm`}
+            ></video>
+          </motion.div>
+
+          {/* 17  */}
+          <motion.div
+            animate={{ y: -position + `rem` }}
+            transition={{ ease: [0.76, 0, 0.24, 1], duration: 0.4 }}
+            className="window  w-full h-full rounded-3xl  "
+          >
+            <video
+              className="absolute object-cover h-full rounded-3xl"
+              autoPlay
+              muted
+              loop
+              src={`https://cdn.refokus.com/website/2022/videos/yearinreview.webm`}
+            ></video>
+          </motion.div>
+
+          {/* 18  */}
+          <motion.div
+            animate={{ y: -position + `rem` }}
+            transition={{ ease: [0.76, 0, 0.24, 1], duration: 0.4 }}
+            className="window  w-full h-full rounded-3xl  "
+          >
+            <video
+              className="absolute object-cover h-full rounded-3xl"
+              autoPlay
+              muted
+              loop
+              src={`https://cdn.refokus.com/refokus-redesign/showcase_4_3.mp4`}
+            ></video>
+          </motion.div>
+
+          {/* 19  */}
+          <motion.div
+            animate={{ y: -position + `rem` }}
+            transition={{ ease: [0.76, 0, 0.24, 1], duration: 0.4 }}
+            className="window  w-full h-full rounded-3xl  "
+          >
+            <video
+              className="absolute object-cover h-full rounded-3xl"
+              autoPlay
+              muted
+              loop
+              src={`https://cdn.refokus.io/website/2022/videos/weglot.webm`}
+            ></video>
+          </motion.div>
+
+          {/* 20  */}
+          <motion.div
+            animate={{ y: -position + `rem` }}
+            transition={{ ease: [0.76, 0, 0.24, 1], duration: 0.4 }}
+            className="window  w-full h-full  rounded-3xl  "
+          >
+            <video
+              className="absolute object-cover h-full rounded-3xl"
+              autoPlay
+              muted
+              loop
+              src={`https://cdn.refokus.com/website/2022/videos/rocketchat.webm`}
+            ></video>
+          </motion.div>
+        </motion.div>
+      </div>
     </div>
   );
 };
