@@ -1,8 +1,8 @@
-/* eslint-disable react/prop-types */
+// import React from "react";
 import Marquee from "./Marquee";
 
-const Marquees = () => {
-  const images = [
+function Marquees() {
+  var images = [
     [
       "https://assets-global.website-files.com/6334198f239547d0f9cd84b3/65b2d275e12177716cb3f2ea_basf.svg",
       "https://assets-global.website-files.com/6334198f239547d0f9cd84b3/65b2d27518bb52e4d642644e_bcgp.svg",
@@ -28,12 +28,16 @@ const Marquees = () => {
     ],
   ];
   return (
-    <div className="py-20 mt-30 w-full relative overflow-hidden">
-      {images.map((url, index) => (
-        <Marquee imagesurls={url} key={index} />
+    <div className="py-20 mt-32 w-full relative overflow-hidden">
+      {images.map((item, index) => (
+        <Marquee
+          key={index}
+          direction={index === 0 ? "left" : "right"}
+          imagesurls={item}
+        />
       ))}
     </div>
   );
-};
+}
 
 export default Marquees;

@@ -1,14 +1,20 @@
 /* eslint-disable react/prop-types */
 import Button from "./Button";
+import { useState } from "react";
 
 function Product({ value, mover, count }) {
+  const [isHovered, setIsHovered] = useState(false);
+
   return (
-    <div className="w-full py-5 p-[5rem] h-[23rem] text-white">
+    <div className="w-full  h-[18rem] text-white">
       <div
+        style={{ backgroundColor: isHovered ? value.bgColor : "initial" }}
         onMouseEnter={() => {
           mover(count);
+          setIsHovered(true);
         }}
-        className="max-w-screen-xl mx-auto flex items-center justify-between"
+        onMouseLeave={() => setIsHovered(false)}
+        className="max-w-screen-xl mx-auto py-5 p-[5rem] flex items-center justify-between"
       >
         <h1 className="font-normal text-4xl text-center">{value.title}</h1>
         <div className="dets w-[20rem] pt-10">

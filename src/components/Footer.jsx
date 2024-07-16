@@ -3,7 +3,7 @@ const Footer = () => {
     <div className="max-w-screen-xl mx-auto">
       <div className="max-w-screen-2xl mx-auto py-10 flex gap-40 p-6">
         <div className="basic-1/2">
-          <h1 className="text-[11.5rem] font-medium leading-none tracking-tight">
+          <h1 className="text-[11rem] font-medium leading-none tracking-tight">
             refokus.
           </h1>
         </div>
